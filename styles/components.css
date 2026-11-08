@@ -1,0 +1,593 @@
+/* ========================================
+   BUTTONS
+======================================== */
+
+.primary-button,
+.secondary-button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 0 22px;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    opacity .18s ease;
+}
+
+.primary-button {
+  color: white;
+  background: var(--pink-dark);
+  box-shadow: 0 8px 18px rgba(217, 143, 158, .25);
+  font-weight: 600;
+}
+
+.secondary-button {
+  min-height: 43px;
+  padding: 0 15px;
+
+  border: 1px solid var(--line);
+  color: var(--rose);
+  background: #fff8f6;
+
+  font-size: 12px;
+}
+
+.primary-button:active,
+.secondary-button:active {
+  transform: scale(.97);
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.small-note {
+  margin: 17px 0 0;
+  color: #b39e9d;
+  font-size: 10px;
+}
+
+/* ========================================
+   MIFFY IMAGE
+======================================== */
+
+.miffy-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto 24px;
+  height: 160px;
+}
+
+.miffy-image {
+  height: 150px;
+  max-width: 100%;
+  width: auto;
+
+  object-fit: contain;
+  transition: transform .3s ease;
+}
+
+.miffy-image:hover {
+  transform: translateY(-5px);
+}
+
+/* ========================================
+   PERSONAL NOTE
+======================================== */
+
+.note-content {
+  max-width: 440px;
+  margin: 25px auto 10px;
+  padding: 25px;
+
+  border-radius: 18px;
+  background: #fff7f5;
+
+  color: var(--muted);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.note-content p {
+  margin: 0 0 16px;
+}
+
+.decoration {
+  display: block;
+  margin-top: 15px;
+
+  color: var(--pink-dark);
+  font-size: 27px;
+}
+
+/* ========================================
+   POLAROID CARDS
+======================================== */
+
+.polaroid {
+  position: relative;
+  min-width: 0;
+
+  padding: 9px 9px 17px;
+
+  background: #fff;
+  border: 1px solid #f1e8e3;
+  border-radius: 3px;
+
+  box-shadow: 0 7px 18px rgba(100, 70, 70, .12);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+/* Different rotations for scrapbook effect */
+
+.polaroid:nth-child(6n + 1) {
+  transform: rotate(-5deg);
+}
+
+.polaroid:nth-child(6n + 2) {
+  transform: rotate(4deg) translateY(-8px);
+}
+
+.polaroid:nth-child(6n + 3) {
+  transform: rotate(-3deg) translateY(5px);
+}
+
+.polaroid:nth-child(6n + 4) {
+  transform: rotate(3deg) translateY(-5px);
+}
+
+.polaroid:nth-child(6n + 5) {
+  transform: rotate(-4deg) translateY(7px);
+}
+
+.polaroid:nth-child(6n) {
+  transform: rotate(5deg) translateY(-6px);
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) translateY(-8px);
+  box-shadow: 0 14px 25px rgba(100, 70, 70, .15);
+  z-index: 3;
+}
+
+/* Decorative washi tape */
+
+.polaroid::before {
+  content: "";
+  position: absolute;
+
+  top: -9px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-4deg);
+
+  width: 43px;
+  height: 16px;
+
+  background: rgba(239, 204, 197, .65);
+  z-index: 2;
+}
+
+/* Photograph frame */
+
+.memory-photo {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  width: 100%;
+  aspect-ratio: 1;
+
+  background: #f9e9e8;
+  color: #d99ba4;
+  font-size: 30px;
+}
+
+.polaroid:nth-child(3n + 2) .memory-photo {
+  background: #f8eee0;
+}
+
+.polaroid:nth-child(3n) .memory-photo {
+  background: #f1eaf3;
+}
+
+.memory-photo img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.polaroid:hover .memory-photo img {
+  transform: scale(1.05);
+}
+
+/* Photograph captions */
+
+.memory-caption {
+  margin: 12px 0 4px;
+
+  color: #80656a;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+}
+
+.memory-date {
+  display: block;
+
+  color: #b6a1a0;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: .05em;
+}
+
+/* ========================================
+   SURPRISE SECTION
+======================================== */
+
+.surprise-box {
+  max-width: 400px;
+  margin: 25px auto 0;
+  padding: 20px;
+
+  border: 1px solid #efd9dc;
+  border-radius: 18px;
+
+  background: #fff7f5;
+  color: var(--rose);
+}
+
+.surprise-box summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  list-style: none;
+}
+
+.surprise-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.surprise-box p {
+  margin: 20px 0 0;
+
+  color: var(--muted);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  padding-top: 25px;
+
+  color: #b7a3a1;
+  font-size: 10px;
+  letter-spacing: .05em;
+}
+
+footer span {
+  color: var(--pink-dark);
+  padding-left: 5px;
+}
+
+/* ========================================
+   CAMERA DIALOG
+======================================== */
+
+.camera-dialog {
+  width: min(100% - 24px, 480px);
+  max-width: 480px;
+  padding: 0;
+
+  border: 1px solid var(--line);
+  border-radius: 26px;
+
+  color: var(--ink);
+  background: var(--paper);
+
+  box-shadow: 0 24px 80px rgba(70, 45, 45, .25);
+}
+
+.camera-dialog::backdrop {
+  background: rgba(64, 45, 48, .48);
+  backdrop-filter: blur(5px);
+}
+
+.dialog-inner {
+  padding: 22px;
+}
+
+.dialog-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.dialog-heading h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.icon-button {
+  width: 35px;
+  height: 35px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #f9eeee;
+  color: var(--rose);
+
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.camera-help {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.camera-frame {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  background: #f6e9e7;
+  border-radius: 18px;
+
+  display: grid;
+  place-items: center;
+}
+
+.camera-frame video,
+.camera-frame canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camera-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  color: #a98d8c;
+  font-size: 12px;
+  text-align: center;
+
+  padding: 20px;
+}
+
+.placeholder-bunny {
+  font-size: 38px;
+  color: var(--pink-dark);
+}
+
+.status-message {
+  min-height: 18px;
+
+  color: var(--rose);
+  font-size: 11px;
+  text-align: center;
+}
+
+.camera-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.shutter-button {
+  min-height: 46px;
+}
+
+.download-button {
+  display: inline-flex;
+}
+
+.privacy-note {
+  margin: 16px 0 0;
+
+  color: #ad9998;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Camera dialog mobile adjustments */
+
+@media (max-width: 480px) {
+  .camera-actions {
+    gap: 6px;
+  }
+
+  .secondary-button {
+    padding: 0 12px;
+  }
+}
+
+/* ========================================
+   MEMORY LIGHTBOX
+======================================== */
+
+.lightbox {
+  width: min(90%, 850px);
+  max-width: 850px;
+  max-height: 90vh;
+  padding: 0;
+
+  border: 1px solid #eadfce;
+  border-radius: 24px;
+
+  background: #fffaf3;
+  color: #6f6259;
+
+  box-shadow: 0 20px 80px rgba(70, 50, 40, .2);
+}
+
+.lightbox::backdrop {
+  background: rgba(55, 45, 45, .65);
+  backdrop-filter: blur(5px);
+}
+
+.lightbox-inner {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 14px;
+
+  padding: 32px;
+}
+
+.lightbox-photo-frame {
+  width: 100%;
+  max-height: 70vh;
+  padding: 16px;
+
+  background: #fffdf8;
+  border: 1px solid #eadfce;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 18px rgba(70, 50, 40, .1);
+}
+
+#lightbox-image {
+  display: block;
+
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 65vh;
+
+  object-fit: contain;
+  margin: auto;
+
+  border-radius: 4px;
+}
+
+.lightbox-content {
+  min-width: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.lightbox-caption {
+  margin-top: 20px;
+
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+
+  color: #8b7770;
+}
+
+.lightbox-counter {
+  margin-top: 8px;
+
+  font-size: .8rem;
+  color: #b6a49a;
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+
+  background: #f3e9dc;
+  color: #8b7770;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+  background: #ead9c8;
+  transform: scale(1.08);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 36px;
+  height: 36px;
+
+  font-size: 1.5rem;
+  z-index: 2;
+}
+
+.lightbox-arrow {
+  width: 42px;
+  height: 42px;
+  font-size: 1.8rem;
+}
+
+/* Lightbox mobile adjustments */
+
+@media (max-width: 600px) {
+  .lightbox-inner {
+    grid-template-columns: 36px minmax(0, 1fr) 36px;
+    gap: 6px;
+    padding: 48px 10px 20px;
+  }
+
+  .lightbox-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 1.4rem;
+  }
+
+  .lightbox-photo-frame {
+    padding: 8px;
+  }
+
+  #lightbox-image {
+    max-height: 58vh;
+  }
+}

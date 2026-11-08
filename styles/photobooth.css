@@ -1,0 +1,431 @@
+/* ========================================
+   PHOTO BOOTH WELCOME SCREEN
+======================================== */
+
+.booth-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  padding: 25px 10px;
+  text-align: center;
+}
+
+.booth-preview {
+  width: 100%;
+  max-width: 260px;
+  padding: 24px;
+
+  background: #f8e9e5;
+  border-radius: 20px;
+}
+
+.preview-strip {
+  padding: 12px 12px 16px;
+
+  background: #fffdf8;
+  box-shadow: 0 5px 15px rgba(80, 55, 45, .12);
+
+  transform: rotate(-3deg);
+}
+
+.preview-photo {
+  height: 95px;
+  margin-bottom: 5px;
+
+  background: #f4e5e1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #d59eaa;
+  font-size: 1.8rem;
+}
+
+.preview-photo:nth-child(even) {
+  background: #f6eddf;
+}
+
+.preview-strip p {
+  margin: 12px 0 0;
+
+  font-family: Georgia, serif;
+  font-size: .8rem;
+  font-style: italic;
+
+  color: #947e75;
+}
+
+.booth-instructions {
+  max-width: 350px;
+  line-height: 1.7;
+  color: #85736b;
+}
+
+.booth-welcome .primary-button {
+  min-width: 210px;
+}
+
+
+/* ========================================
+   PHOTO BOOTH SESSION LIGHTBOX
+======================================== */
+
+.booth-session {
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(92vw, 540px);
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
+
+  margin: 0;
+  padding: 28px;
+
+  text-align: center;
+  background: #fffdfb;
+  border: 1px solid #f1e4df;
+  border-radius: 24px;
+
+  /* Creates the dimmed background around the lightbox. */
+  box-shadow:
+    0 0 0 100vmax rgba(45, 35, 35, 0.65),
+    0 15px 50px rgba(50, 35, 35, 0.2);
+}
+
+.booth-progress {
+  margin: 0 0 16px;
+  font-size: .75rem;
+  letter-spacing: 2px;
+  color: #b18c91;
+  font-weight: 700;
+}
+
+.booth-camera-frame {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  margin: 0 auto;
+
+  background: #e9e1df;
+  border: 8px solid #fff8f1;
+  border-radius: 18px;
+
+  box-shadow: 0 5px 20px rgba(70, 50, 40, .12);
+}
+
+#booth-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  /* Show the ENTIRE camera image instead of cropping it. */
+  object-fit: contain;
+  object-position: center;
+  background: #e9e1df;
+
+  transform: scaleX(-1);
+}
+
+.booth-countdown {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(5rem, 20vw, 9rem);
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .12);
+}
+
+.booth-countdown[hidden] {
+  display: none !important;
+}
+
+.booth-flash {
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.booth-flash.is-active {
+  animation: booth-camera-flash 180ms ease-out;
+}
+
+@keyframes booth-camera-flash {
+  0% { opacity: 0; }
+  30% { opacity: .95; }
+  100% { opacity: 0; }
+}
+
+.booth-status {
+  margin: 18px 0;
+  color: #947e75;
+  line-height: 1.5;
+}
+
+/* ========================================
+   SESSION CONTROLS
+======================================== */
+
+.booth-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.booth-controls button {
+  min-width: 145px;
+}
+
+.booth-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.booth-thumbnail {
+  width: 60px;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  background: #f3e9e5;
+  border: 3px solid white;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+}
+
+/* ========================================
+   COMPLETED PHOTO STRIP
+======================================== */
+
+.booth-result-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 12px;
+  text-align: center;
+}
+
+.booth-result-content h3 {
+  margin: 0;
+  color: #80636a;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.completed-strip {
+  width: min(100%, 290px);
+  padding: 14px 14px 20px;
+  background: #fffdf8;
+  border: 1px solid #f1e4df;
+  border-radius: 5px;
+  box-shadow: 0 8px 25px rgba(80, 55, 45, .15);
+}
+
+.completed-strip-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 8px;
+  background: #f3e9e5;
+  border: 3px solid white;
+  box-shadow: 0 1px 4px rgba(50, 35, 35, .08);
+}
+
+.completed-strip-photo:last-child {
+  margin-bottom: 0;
+}
+
+.booth-result-content > p {
+  margin: 0;
+  color: #947e75;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+}
+
+/* ========================================
+   BOOTH STATES
+======================================== */
+
+.booth-session[hidden],
+.booth-welcome[hidden],
+.booth-result[hidden] {
+  display: none !important;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+  .booth-session {
+    width: calc(100vw - 28px);
+    max-height: 92vh;
+    max-height: 92dvh;
+    padding: 18px 14px;
+    border-radius: 20px;
+  }
+
+  .booth-camera-frame {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .booth-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .booth-controls button {
+    width: 100%;
+  }
+
+  .booth-thumbnails {
+    gap: 7px;
+  }
+
+  .booth-thumbnail {
+    width: 52px;
+  }
+}
+
+
+/* ========================================
+   MIFFY PHOTO STRIP DECORATIONS
+======================================== */
+
+.booth-result-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 25px 10px;
+  text-align: center;
+}
+
+.booth-result-content h3 {
+  margin: 0;
+  color: #80636a;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.completed-strip {
+  position: relative;
+  width: min(100%, 340px);
+  padding: 16px 16px 22px;
+
+  background: #fffaf4;
+  border: 2px solid #f0d5d8;
+  border-radius: 8px;
+
+  box-shadow:
+    0 8px 25px rgba(80, 55, 45, .12),
+    0 0 0 6px #fffdfb,
+    0 0 0 8px #f3dfe0;
+}
+
+.strip-header,
+.strip-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.strip-header {
+  padding: 8px 0 18px;
+}
+
+.strip-miffy {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+}
+
+.strip-decoration {
+  margin: 0;
+  color: #d99ba8;
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  letter-spacing: 5px;
+}
+
+.strip-title {
+  margin: 0;
+  color: #80636a;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.strip-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 10px;
+
+  background: #f7ece8;
+  border: 1px solid #f0deda;
+}
+
+.completed-strip-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 4px solid white;
+  box-shadow: 0 2px 6px rgba(70, 50, 40, .1);
+}
+
+.strip-footer {
+  padding-top: 20px;
+}
+
+.strip-footer > p:not(.strip-decoration) {
+  margin: 0;
+  color: #947e75;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+}
+
+.strip-date {
+  font-family: "DM Sans", sans-serif !important;
+  font-size: .72rem;
+  font-style: normal !important;
+  letter-spacing: 1px;
+  color: #b18c91 !important;
+}
+
+.booth-result-content > button {
+  min-width: 220px;
+}
+
+@media (max-width: 480px) {
+  .completed-strip {
+    width: min(100%, 310px);
+  }
+
+  .strip-miffy {
+    width: 70px;
+    height: 70px;
+  }
+}
