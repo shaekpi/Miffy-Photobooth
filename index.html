@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff8f4">
+  <meta name="description" content="A tiny photo booth made just for you.">
+  <title>a little something for you ♡</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <main class="page-shell">
+    <div class="top-note"><span class="sparkle">✳</span> a tiny place made just for you <span class="sparkle">✳</span></div>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="bunny-mark" aria-hidden="true">
+        <span class="ear ear-left"></span><span class="ear ear-right"></span>
+        <span class="bunny-face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i></span>
+      </div>
+      <p class="eyebrow">WELCOME TO YOUR LITTLE CORNER</p>
+      <h1 id="hero-title">Hello, <span>you.</span></h1>
+      <p class="intro">A little collection of smiles, silly moments, and memories waiting to happen.</p>
+      <button class="primary-button" id="open-camera" type="button">
+        <span aria-hidden="true">♡</span> enter the photo booth
+      </button>
+      <p class="small-note">best enjoyed with your favourite person (or just yourself!)</p>
+    </section>
+
+    <section class="bottom-card" aria-label="A little note">
+      <div class="card-flower" aria-hidden="true">✿</div>
+      <div>
+        <p class="card-title">a little reminder</p>
+        <p class="card-copy">You make ordinary days feel a little more lovely.</p>
+      </div>
+      <span class="card-heart" aria-hidden="true">♡</span>
+    </section>
+
+    <footer>made with a little bit of love <span aria-hidden="true">୨୧</span></footer>
+  </main>
+
+  <dialog class="camera-dialog" id="camera-dialog" aria-labelledby="camera-title">
+    <div class="dialog-inner">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">SAY CHEESE!</p>
+          <h2 id="camera-title">your mini photo booth</h2>
+        </div>
+        <button class="icon-button" id="close-camera" type="button" aria-label="Close photo booth">×</button>
+      </div>
+      <p class="camera-help" id="camera-help">Allow camera access when Safari asks. Your photos stay on this device.</p>
+      <div class="camera-frame">
+        <video id="camera-video" autoplay playsinline muted hidden></video>
+        <canvas id="photo-canvas" hidden></canvas>
+        <div class="camera-placeholder" id="camera-placeholder">
+          <span class="placeholder-bunny" aria-hidden="true">૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა</span>
+          <span>Your camera preview will appear here</span>
+        </div>
+      </div>
+      <p class="status-message" id="camera-status" role="status" aria-live="polite"></p>
+      <div class="camera-actions">
+        <button class="secondary-button" id="switch-camera" type="button" disabled>↻ flip</button>
+        <button class="primary-button shutter-button" id="take-photo" type="button" disabled><span aria-hidden="true">●</span> take photo</button>
+        <button class="secondary-button" id="retake-photo" type="button" hidden>retake</button>
+        <a class="secondary-button download-button" id="download-photo" hidden download="little-memory.png">↓ save</a>
+      </div>
+      <p class="privacy-note">Nothing is uploaded. Photos are only saved if you choose to download them.</p>
+    </div>
+  </dialog>
+
+  <script src="scripts/camera.js"></script>
+  <script src="scripts/photo-booth.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
