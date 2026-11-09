@@ -482,7 +482,7 @@ async function savePhotoStrip(button) {
     flowers.textContent = "🌷  ✿  ♡  ✿  🌷";
 
     const caption = document.createElement("p");
-    caption.textContent = "little memories, kept forever";
+    caption.textContent = "love you sweetheart ♡";
 
     const date = document.createElement("p");
     date.className = "strip-date";

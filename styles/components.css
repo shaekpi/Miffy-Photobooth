@@ -591,3 +591,119 @@ footer span {
     max-height: 58vh;
   }
 }
+
+
+.cat-mug-memory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 40px auto 10px;
+}
+
+.cat-mug-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  padding: 9px 9px 30px;
+  background: white;
+  border: 1px solid #f0e0df;
+  border-radius: 3px;
+  box-shadow: 0 5px 15px rgba(100, 70, 70, 0.12);
+  transform: rotate(-3deg);
+  transition: transform 0.3s ease;
+}
+
+.cat-mug-photo:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.cat-mug-memory p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #b58b91;
+  margin: 0;
+}
+
+/* PERSONAL LETTER */
+
+.note-content {
+  max-width: 620px;
+  margin: 35px auto 0;
+  text-align: left;
+  padding: 0 12px;
+}
+
+.note-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  color: #a8757f;
+  margin: 0 0 32px;
+}
+
+.note-content p {
+  font-size: 0.98rem;
+  line-height: 2;
+  color: #66575a;
+  margin: 0 0 21px;
+}
+
+.note-content em {
+  color: #a8757f;
+}
+
+.letter-divider {
+  text-align: center;
+  color: #d5a6ac;
+  letter-spacing: 5px;
+  margin: 38px 0;
+  font-size: 1rem;
+}
+
+/* CAT MUG POLAROID */
+
+.cat-mug-memory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 35px auto 15px;
+}
+
+.cat-mug-photo {
+  width: 165px;
+  height: 165px;
+  object-fit: cover;
+  padding: 9px 9px 30px;
+  background: white;
+  border: 1px solid #f0e0df;
+  border-radius: 3px;
+  box-shadow: 0 5px 15px rgba(100, 70, 70, 0.12);
+  transform: rotate(-3deg);
+}
+
+.cat-mug-memory figcaption {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #b58b91;
+}
+
+@media (max-width: 600px) {
+  .note-content {
+    padding: 0 4px;
+  }
+
+  .note-content p {
+    font-size: 0.94rem;
+    line-height: 1.9;
+  }
+
+  .note-content h3 {
+    font-size: 1.35rem;
+  }
+}
